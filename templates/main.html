@@ -1,0 +1,925 @@
+{% load static %}
+<!doctype html >
+<html lang="en">
+<head>
+
+<title> Telugu Power Top Telugu news website in the world | Latest Telugu News - Telugu power</title>
+<link rel="icon" href="{% static "images/hand.png" %}" type="image/x-icon">
+<meta name="description" content="Telugu power - World No 1 leading Telugu Daily News website delivers Andhra Pradesh and Telangana News,Telugu Power, telugupower.in  Latest Telugu News, Telugu News Paper Online, Movie news, Political News in Telugu , Business News in Telugu , Tollywood, Cinema and Sports News in Telugu" />
+<meta name="keywords" content="Telugu power, Telugu power news, Andhra News, Telangana News, Telugu News Paper, Daily Telugu News, Tollywood, Telugu Cinema, Telugu Movie Reviews, Tollywood Movie Reviews, videos, India news, breaking news, today news, current news, news website, politics, world news, business news, bollywood news, cricket news, sports, lifestyle, gadgets, tech news, video news" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="{% static "css/css_code.css" %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!--
+<meta property="fb:app_id" content="2714925738738315"/>
+<meta property="og:title" content="Telugu Power" />
+<meta property="og:image" content="{% static "images/hand.png" %}" />
+<meta property="og:url" content="https://www.samba4334.pythonanywhere.com" />
+<meta property="og:description" content="Telugu Power" />
+<meta property="og:type" content="article" />
+-->
+
+
+<script data-ad-client="ca-pub-8331876777761763" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<style>
+    .msg
+    {
+        font-size:15px;
+        color:white;
+        margin:5px;
+
+    }
+
+</style>
+
+</head>
+
+<body>
+<!--  Advertise images -->
+<div class="leftadv" >
+{% for l in leftadv1 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+<img src ="{{ l.image.url }}" >
+<img src ="{{ l.image.url }}" >
+<img src ="{{ l.image.url }}" >
+<img src ="{{ l.image.url }}" >
+</div>
+
+<div class="rightadv" >
+{% for l in rightadv1 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+<img src ="{{ l.image.url }}" >
+<img src ="{{ l.image.url }}" >
+<img src ="{{ l.image.url }}" >
+<img src ="{{ l.image.url }}" >
+</div>
+
+
+<!-- Main page -->
+
+
+<div class="main1">
+
+{% if request.user  %}
+<p style="font-size:12px;margin-left:86%;color:red;">Hi, {{request.user}}</p>
+{% else %}
+<br>
+{% endif %}
+
+<div>
+<button class="btn btn-success btn-sm lgbtn" onclick="openForm()">Login</button>
+<h1 class="text-danger" id="h11">తెలుగు పవర్ </h1>
+
+<br>
+</div>
+
+<div class="form-popup" id="myForm">
+<br>
+<a href="{% url 'social:begin' 'facebook' %}"><button type="button" name="button" class="btn btn-primary btn-md fglgbtn"><span class="fa fa-facebook"></span>Facebook Login </button></a>
+<br>
+<br>
+<a href="{% url 'social:begin' 'google-oauth2' %}"><button type="button" name="button" class="btn btn-danger btn-md fglgbtn"><span class="fa fa-google"></span>Google Login</button></a>
+<br>
+<br>
+<button type="button" class="btn btn-danger fglgbtn" onclick="closeForm()">Close</button>
+<br>
+<br>
+</div>
+
+<br>
+
+<!-- <a href="{% url 'national'  %}" class="btn btn-success" id="bu1" target="_blank" >జాతీయ వార్తలు</a>
+<a href="{% url 'international'  %}" class="btn btn-success" id="bu1" target="_blank" > అంతర్జాతీయ వార్తలుు</a>
+<a href="{% url 'local'  %}" class="btn btn-success" id="bu1" target="_blank" >ప్రాంతీయ  వార్తలు</a>
+<a href="{% url 'cinema'  %}" class="btn btn-success" id="bu1" target="_blank" >సినిమా వార్తలు</a>
+<a href="{% url 'sports'  %}" class="btn btn-success" id="bu1" target="_blank">క్రీడా వార్తలు</a>  -->
+
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
+    <a class="navbar-brand" id="nava" href="{% url 'main'  %}"><i class="fa fa-home w3-xxlarge"></i></a>
+  <!-- Toggler/collapsibe Button -->
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'national'  %}">జాతీయ వార్తలు</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link py-0" id="nava"  href="{% url 'international'  %}">అంతర్జాతీయ వార్తలు</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'local'  %}">ప్రాంతీయ  వార్తలు</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'application'  %}">Application</a>
+      </li>
+       <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'track'  %}">Track</a>
+      </li>
+
+      {% if request.user.is_staff  %}
+
+	  <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'adminconsole'  %}">Admin</a>
+      </li>
+    {% endif %}
+
+<!--	  <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'cinema'  %}">సినిమా వార్తలు</a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'sports'  %}">క్రీడా వార్తలు</a>
+      </li>
+-->
+    </ul>
+	</div>
+
+	<span class="msg"> Hi, {{request.user}}  </span>
+	<br />
+	<span class="msg"> <a href="{% url 'logout'  %}" id="logouta1" >Logout</a></span>
+
+</nav>
+
+<br>
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in top_news1 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in top_news2 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+
+<div class="col-sm-4 box">
+{% for l in top_news3 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+</div>
+</div>
+
+<br>
+
+<!-- second Main -->
+<!-- 1st row -->
+<div class="main2">
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news11 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news12 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news13 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 2nd row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news21 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news22 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news23 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+
+<!-- 3rd row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news31 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news32 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news33 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!--4th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news41 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news42 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news43 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+
+
+<!-- 5th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news51 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news52 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news53 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 6th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news61 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news62 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news63 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 7th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news71 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news72 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news73 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 8th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news81 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news82 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news83 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 9th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news91 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news92 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news93 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+
+<!-- 10th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news101 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news102 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news103 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 11th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news111 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news112 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news113 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 12th row -->
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news121 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news122 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news123 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+
+<!-- 13th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news131 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news132 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news133 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 14th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news141 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news142 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news143 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 15th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news151 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news152 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news153 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 16th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news161 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news162 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news163 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+
+<!-- 17th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news171 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news172 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news173 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 18th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news181 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news182 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news183 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 19th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news191 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news192 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news193 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+<!-- 20th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sub_news201 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news202 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+
+{% for l in sub_news203 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+<img src="{{ l.newsimage1.url }}" id="iim1"></div>
+{{ l.newsheading }}</a></div>
+{% endfor %}
+</div>
+
+</div>
+
+
+<!-- bottom -->
+
+
+<div class="col-sm-12  bottom" >
+<a href="{% url 'aboutus'  %}" class="bottomanch">About us</a><p style="display:inline-block;font-size:12px;">|</p>
+<a href="{% url 'contact'  %}" class="bottomanch">Contact</a><p style="display:inline-block;font-size:12px;">|</p>
+<a href="#" class="bottomanch">Advertise</a><p style="display:inline-block;font-size:12px;">|</p>
+<a href="#" class="bottomanch">Privacy Policy</a>
+<div class="col-sm-12  bottom" >
+<p class="bottomanch">All Rights Reserved @ TeluguPower</p>
+</div>
+</div>
+
+
+</div>
+<!-- ending Main1 div -->
+
+</body>
+
+<script src="{% static "css/jscript.js" %}"></script>
+</html>

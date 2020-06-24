@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="main1">
+<h2>welcome to contact page </h2>
+
+{% for message in messages %}
+
+<p style="color:red"> {{message}} </p>
+
+{% endfor %}
+
+<div class="container">
+<div class="row">
+<div class="col-sm-5">
+<form action="{% url 'contact' %}" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+<!--    {% for field in form %}
+    <input type="{{field.type}}" placeholder= "{{ field.label_tag }}">
+
+    {% endfor %} -->
+    <input class="btn btn-primary" type="submit" />
+    <br><br>
+</form>
+</div>
+</div>
+</div>
+
+</div>
+
+{% endblock %}

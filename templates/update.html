@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="POST" action="" >
+{% csrf_token %}
+
+<div class="main1">
+
+    {{form}}
+
+<br>
+ <input type="submit" name="Save" value="Save" style="background-color:green;color:white" >
+ <a class="btn btn-md btn-info" href="{% url  'adminconsole' %}">Back</a>
+
+</div>
+
+</form>
+
+{% endblock %}

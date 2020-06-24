@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="main1">
+<h2>welcome to appliation page </h2>
+
+<form method="POST" action="/submit_application/">
+{% csrf_token %}
+
+<div class="row">
+<div class="col-sm-6 box">
+<input type="text" name="firstname" placeholder="Firstname" required >
+</div>
+<div class="col-sm-6 box">
+<input type="text" name="lastname" placeholder="Lastname" required >
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-6 box">
+<input type="email" name="email" placeholder="email" required >
+</div>
+<div class="col-sm-6 box">
+<input type="date" name="dob" placeholder="Date-of-birth" required >
+</div>
+</div>
+
+<div class="row">
+<div class="col-sm-6 box">
+<input type="text" name="city" placeholder="City" required >
+</div>
+</div>
+
+<br>
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2FtYjQzMzQiLCJhIjoiY2tiaHhrYnJ0MDlvMzM1bnJoeHgxdTc3MyJ9.r9UB4Vka1HFswtqUdd4Kbg';
+var map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/streets-v11',
+center: [-0.118092, 51.509865],
+zoom: 9,
+});
+
+var marker = new mapboxgl.Marker()
+.setLngLat([-0.118092, 51.509865])
+.addTo(map);
+
+</script>
+
+<br>
+
+ <input type="submit" value="submit" name="submit">
+
+</form>
+
+</div>
+
+
+
+{% endblock %}

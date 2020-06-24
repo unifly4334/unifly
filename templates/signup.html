@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<style>
+
+    h1{
+        font-weight:1000;
+    }
+
+    body {
+  background-color: skyblue;
+}
+
+   .Sameline {
+    display: inline-block;
+    padding:2px;
+    margin-left:10px;
+    }
+
+     .Sameline1 {
+    display: inline-block;
+    border: 2px solid green;
+    padding:2px;
+    margin-left:80px;
+
+    }
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<br>
+<h1 class="text-danger">తెలుగు పవర్</h1>
+<br>
+<h2>Sign up Form</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    <!--    {{form.as_p}}  (to access entier form )-->
+    <!-- {{form.username.label}} {{form.usernmame}} {{form.email.label}}{{form.email}} ((to access particualr fields from user model -->
+    <!-- using for loop acceing the form elements
+        {% for field in form %}
+        {{field.label}}
+        {{field}}
+
+        {% endfor %}
+
+    -->
+<div class="container">
+     {% for field in form %}
+    {{field.label}}
+    <div class="Sameline1" > {{field}} </div>
+    <br>
+    <br>
+    {% endfor %}
+
+     <input type="submit" name="Create User">
+     <br>
+     <div>Already Have Account ? <a href="{% url 'login' %}">Login</a> </div>
+</div>
+
+
+{{form.errors}}
+
+
+
+
+</form>
+
+
+
+<!--
+<form method="post">
+  {% csrf_token %}
+  {% for field in form %}
+    <p>
+      {{ field.label_tag }}<br>
+      {{ field }}
+      {% if field.help_text %}
+        <small style="color: grey">{{ field.help_text }}</small>
+      {% endif %}
+      {% for error in field.errors %}
+        <p style="color: red">{{ error }}</p>
+      {% endfor %}
+    </p>
+  {% endfor %}
+  <button type="submit">Sign up</button>
+</form>
+-->
+
+</body>
+</html>

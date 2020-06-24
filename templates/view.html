@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="main1">
+<h2> view Application </h2>
+
+
+{% for l in vapp %}
+
+{{ l.application_id }}
+<br><br>
+{{ l.user }}
+<br><br>
+    {{ l.firstname }}
+    <br><br>
+  {{ l.lastname }}
+  <br><br>
+  {{ l.email }}
+  <br><br>
+    {{ l.dob }}
+    <br><br>
+   {{ l.city }}
+   <br><br>
+    {{ l.status }}
+    <br><br>
+<embed src="{{ l.file1.url  }}" type="application/pdf" width="600px" height="300px">
+    <br><br>
+<embed src="{{ l.file2.url  }}" type="application/pdf" width="600px" height="300px">
+
+
+{% endfor %}
+
+
+</div>
+{% endblock %}

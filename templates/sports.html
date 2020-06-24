@@ -1,0 +1,469 @@
+{% load static %}
+<!doctype html >
+<html lang="en">
+<head>
+<title>Telugu Power Top Telugu news website in the world | Latest Telugu News - Telugu power</title>
+<meta name="description" content="Telugu power - World No 1 leading Telugu Daily News website delivers Andhra Pradesh and Telangana News, Latest Telugu News, Telugu News Paper Online, Movie news, Political News in Telugu , Business News in Telugu , Tollywood, Cinema and Sports News in Telugu" />
+<meta name="keywords" content="Telugu power, Telugu power news, Andhra News, Telangana News, Telugu News Paper, Daily Telugu News, Tollywood, Telugu Cinema, Telugu Movie Reviews, Tollywood Movie Reviews, videos, India news, breaking news, today news, current news, news website, politics, world news, business news, bollywood news, cricket news, sports, lifestyle, gadgets, tech news, video news" />
+<link rel="icon" href="{% static "images/hand.png" %}" type="image/x-icon">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="{% static "css/css_code.css" %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<script data-ad-client="ca-pub-8331876777761763" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+
+<body>
+
+<div class="leftadv" >
+{% for l in leftadv1 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+{% for l in leftadv2 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+{% for l in leftadv3 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+{% for l in leftadv4 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+{% for l in leftadv5 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+</div>
+
+<div class="rightadv" >
+{% for l in rightadv1 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+{% for l in rightadv2 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+{% for l in rightadv3 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+{% for l in rightadv4 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+{% for l in rightadv5 %} <img src ="{{ l.advimg.url }}" > {% endfor %}
+</div>
+
+<div class="main1">
+<br>
+<h1 class="text-danger" id="h11">తెలుగు పవర్</h1>
+<br>
+
+<!-- <a href="{% url 'national'  %}" class="btn btn-success" id="bu1" target="_blank" >జాతీయ వార్తలు</a>
+<a href="{% url 'international'  %}" class="btn btn-success" id="bu1" target="_blank" > అంతర్జాతీయ వార్తలుు</a>
+<a href="{% url 'local'  %}" class="btn btn-success" id="bu1" target="_blank" >ప్రాంతీయ  వార్తలు</a>
+<a href="{% url 'cinema'  %}" class="btn btn-success" id="bu1" target="_blank" >సినిమా వార్తలు</a>
+<a href="{% url 'sports'  %}" class="btn btn-success" id="bu1" target="_blank">క్రీడా వార్తలు</a>  -->
+
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark navbar-fixed-top">
+    <a class="navbar-brand" id="nava" href="{% url 'main'  %}"><i class="fa fa-home w3-xlarge"></i> </a>
+  <!-- Toggler/collapsibe Button -->
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'national'  %}">జాతీయ వార్తలు</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'international'  %}">అంతర్జాతీయ వార్తలు</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'local'  %}">ప్రాంతీయ  వార్తలు</a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'cinema'  %}">సినిమా వార్తలు</a>
+      </li>
+	  <li class="nav-item active">
+        <a class="nav-link py-0" id="nava" href="{% url 'sports'  %}">క్రీడా వార్తలు</a>
+      </li>
+    </ul>
+	</div>
+</nav>
+
+<br>
+
+<!-- 1st row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sports11 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in sports12 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+{% for l in sports13 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+</div>
+</div>
+
+<br>
+<!-- 2nd row -->
+
+<div class="main2">
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sports21 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in sports22 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+{% for l in sports23 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+</div>
+
+<!-- 3rd row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sports31 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in sports32 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+{% for l in sports33 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+</div>
+
+<!-- 4th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sports41 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in sports42 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+{% for l in sports43 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+</div>
+
+<!-- 5th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sports51 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in sports52 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+{% for l in sports53 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+</div>
+<!-- 6th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sports61 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in sports62 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+{% for l in sports63 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+</div>
+<!-- 7th row -->
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sports71 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in sports72 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+{% for l in sports73 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+</div>
+<!-- 8th row -->
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sports81 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in sports82 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+{% for l in sports83 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+</div>
+<!-- 9th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sports91 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in sports92 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+{% for l in sports93 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+</div>
+<!-- 10th row -->
+
+<div class="row">
+<div class="col-sm-4 box">
+{% for l in sports101 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+
+<div class="col-sm-4 box">
+{% for l in sports102 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+<div class="col-sm-4 box">
+{% for l in sports103 %}
+<div class="ca1"><a  href="{% url 'sub' l.newstitle %}" id="ia1" target="_blank">
+<div class="cim1">
+ <img src="{{ l.newsimage1.url }}" id="iim1">
+</div>
+{{ l.newsheading }}</a></div>
+ {% endfor %}
+</div>
+
+</div>
+
+</div>
+
+<!-- bottom  -->
+
+
+<div class="row">
+<div class="col-sm-3 box"> </div>
+<div class="col-sm-6 box" style="background-color:black;color:white;">
+<p style="text-align:center">Copy Rights Reserved <p>
+<p style="text-align:center">contact : telugupower.in@gmail.com<p>
+</div>
+<div class="col-sm-3 box"> </div>
+</div>
+
+</body>
+
+<script src="{% static "css/jscript.js" %}"></script>
+</html>

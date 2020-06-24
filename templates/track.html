@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="main1">
+<h2>welcome to My Tracking page </h2>
+
+<table >
+  <tr>
+    <th>AppId</th>
+    <th>User</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Email</th>
+    <th>DOB</th>
+    <th>City</th>
+    <th>Status</th>
+
+  </tr>
+
+{% for l in myapp %}
+  <tr>
+    <td>{{ l.application_id }}</td>
+    <td>{{ l.user }}</td>
+    <td>{{ l.firstname }}</td>
+    <td>{{ l.lastname }}</td>
+    <td>{{ l.email }}</td>
+    <td>{{ l.dob }}</td>
+    <td>{{ l.city }}</td>
+    <td>{{ l.status }}</td>
+  </tr>
+{% endfor %}
+
+</table>
+
+
+
+</div>
+{% endblock %}

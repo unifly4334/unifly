@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="main1">
+<h2>welcome to admin console page </h2>
+
+{% for message in messages %}
+
+<p style="color:red"> {{message}} </p>
+
+{% endfor %}
+
+<form method="GET">
+
+  {{myfilter.form}}
+
+   <button class="btn btn-primary"  type="submit">Search </button>
+
+</form>
+
+<table >
+  <tr>
+    <th>AppId</th>
+    <th>User</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Email</th>
+    <th>DOB</th>
+  <!--  <th>City</th> -->
+    <th>Status</th>
+    <th>Update</th>
+    <th>View</th>
+
+  </tr>
+
+{% for l in allapp %}
+  <tr>
+    <td>{{ l.application_id }}</td>
+    <td>{{ l.user }}</td>
+    <td>{{ l.firstname }}</td>
+    <td>{{ l.lastname }}</td>
+    <td>{{ l.email }}</td>
+    <td>{{ l.dob }}</td>
+<!--    <td>{{ l.city }}</td> -->
+    <td>{{ l.status }}</td>
+    <td><a class="btn btn-sm btn-danger" href="{% url  'update' l.application_id %}">Update</a> </td>
+    <td><a class="btn btn-md btn-primary" href="{% url  'view_app' l.application_id %}">View</a> </td>
+
+
+  </tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}
